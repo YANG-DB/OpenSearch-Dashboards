@@ -57,6 +57,7 @@ import {
 import { PLUGIN_ID, PLUGIN_PATH } from '../../../common';
 import { AppPluginStartDependencies } from '../../types';
 import { AddData } from '../add_data';
+import { OTELDashboard } from '../otel_dashboard';
 import { GettingStarted } from '../getting_started';
 import { ManageData } from '../manage_data';
 import { NewsFeed } from '../news_feed';
@@ -95,6 +96,7 @@ export const Overview: FC<Props> = ({ newsFetchResult, solutions, features, logo
     .filter(({ solutionId }) => solutionId === 'opensearchDashboards')
     .sort(sortByOrder);
   const addDataFeatures = getFeaturesByCategory(FeatureCatalogueCategory.DATA);
+  const addOTELDashboardFeatures = getFeaturesByCategory(FeatureCatalogueCategory.DATA);
   const manageDataFeatures = getFeaturesByCategory(FeatureCatalogueCategory.ADMIN);
   const devTools = findFeatureById('console');
 
@@ -266,6 +268,10 @@ export const Overview: FC<Props> = ({ newsFetchResult, solutions, features, logo
                   >
                     <EuiFlexItem>
                       <AddData addBasePath={addBasePath} features={addDataFeatures} />
+                    </EuiFlexItem>
+
+                    <EuiFlexItem>
+                      <OTELDashboard addBasePath={addBasePath} features={addOTELDashboardFeatures} />
                     </EuiFlexItem>
 
                     <EuiFlexItem>

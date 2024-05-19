@@ -128,6 +128,10 @@ export function HomePageProvider({ getService, getPageObjects }: FtrProviderCont
       await this.clickSynopsis('home_tutorial_directory');
     }
 
+    async clickOnOtelDashboard() {
+      await this.clickSynopsis('home_otel_dashboard');
+    }
+
     // clicks on Active MQ logs
     async clickOnLogsTutorial() {
       await this.clickSynopsis('activemqlogs');

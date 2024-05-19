@@ -156,6 +156,21 @@ export class HomePublicPlugin
       order: 500,
     });
 
+    featureCatalogue.register({
+      id: 'home_otel_dashboard',
+      title: i18n.translate('home.otelDashboard.featureCatalogueTitle', {
+        defaultMessage: 'Open OTEL Dashboards',
+      }),
+      description: i18n.translate('home.tutorialDirectory.featureCatalogueDescription', {
+        defaultMessage: 'Started using OpenTelemetry Observability Dashboards',
+      }),
+      icon: 'apm_trace',
+      showOnHomePage: true,
+      path: `/app/dashboards#/view/otel-services-dashboard-1_0_0_ID`,
+      category: 'data' as FeatureCatalogueCategory.DATA,
+      order: 500,
+    });
+
     const sectionTypes = { ...this.sectionTypeService.setup() };
 
     sectionTypes.registerSection(workWithDataSection);

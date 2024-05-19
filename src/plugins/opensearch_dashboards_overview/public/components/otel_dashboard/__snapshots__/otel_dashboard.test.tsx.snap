@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddData render 1`] = `
+<section
+  aria-labelledby="osdOverviewOtelDashboard__title"
+  className="osdOverviewOtelDashboard"
+>
+  <EuiFlexGroup
+    alignItems="center"
+  >
+    <EuiFlexItem
+      grow={1}
+    >
+      <EuiTitle
+        size="s"
+      >
+        <h2
+          id="osdOverviewOtelDashboard__title"
+        >
+          <FormattedMessage
+            defaultMessage="Otel Dashboard Insight"
+            id="opensearchDashboardsOverview.otelDashboard.sectionTitle"
+            values={Object {}}
+          />
+        </h2>
+      </EuiTitle>
+    </EuiFlexItem>
+  </EuiFlexGroup>
+  <EuiSpacer
+    size="m"
+  />
+  <EuiFlexGroup
+    className="osdOverviewOtelDashboard__content"
+  >
+    <EuiFlexItem
+      key="home_tutorial_directory"
+    >
+      <RedirectAppLinks>
+        <Synopsis
+          description="Get started with OpenTelemetry Observability analysis."
+          iconType="indexOpen"
+          id="home_tutorial_directory"
+          isBeta={false}
+          title="Ingest data"
+          url="/app/home#/tutorial_directory"
+          wrapInPanel={true}
+        />
+      </RedirectAppLinks>
+    </EuiFlexItem>
+    <EuiFlexItem
+      key="ingestManager"
+    >
+    </EuiFlexItem>
+  </EuiFlexGroup>
+</section>
+`;

@@ -31,32 +31,11 @@
 import React from 'react';
 import { AddData } from './add_data';
 import { shallowWithIntl } from 'test_utils/enzyme_helpers';
-
-jest.mock('../../app_navigation_handler', () => {
-  return {
-    createAppNavigationHandler: jest.fn(() => () => {}),
-  };
-});
-
-beforeEach(() => {
-  jest.clearAllMocks();
-});
-
-const addBasePathMock = jest.fn((path: string) => (path ? path : 'path'));
+import { FeatureCatalogueCategory } from 'src/plugins/home/public';
 
 const mockFeatures = [
   {
-    category: 'data',
-    description: 'Get started with sample data, visualizations, and dashboards.',
-    showOnHomePage: true,
-    icon: 'indexOpen',
-    id: 'home_otel_dashboard',
-    order: 500,
-    path: '/app/dashboards#/view/otel-services-dashboard-1_0_0_ID',
-    title: 'Open OTEL Dashboards',
-  },
-  {
-    category: 'data',
+    category: FeatureCatalogueCategory.DATA,
     description: 'Get started with sample data, visualizations, and dashboards.',
     showOnHomePage: true,
     icon: 'indexOpen',
@@ -65,29 +44,11 @@ const mockFeatures = [
     path: '/app/home#/tutorial_directory',
     title: 'Ingest data',
   },
-  {
-    category: 'admin',
-    description: 'Add and manage your fleet of OpenSearch Agents and integrations.',
-    showOnHomePage: true,
-    icon: 'indexManagementApp',
-    id: 'ingestManager',
-    order: 510,
-    path: '/app/ingestManager',
-    title: 'Add OpenSearch Agent',
-  },
-  {
-    category: 'data',
-    description: 'Import your own CSV, NDJSON, or log file',
-    showOnHomePage: true,
-    icon: 'document',
-    id: 'ml_file_data_visualizer',
-    order: 520,
-    path: '/app/ml#/filedatavisualizer',
-    title: 'Upload a file',
-  },
 ];
 
-describe('AddData', () => {
+const addBasePathMock = jest.fn((path: string) => (path ? path : 'path'));
+
+describe('OtelDashboard', () => {
   test('render', () => {
     const component = shallowWithIntl(
       <AddData addBasePath={addBasePathMock} features={mockFeatures} />
